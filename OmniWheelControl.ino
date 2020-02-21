@@ -70,7 +70,7 @@ void loop(){
 }
 
 
-// Smooth driving behavior
+// Sine-wave motion style 
 void behaviorSmooth(int vx, int vy) {
   // the higher, the faster it's switching from left to right
   float phasesOverTime = 1.5; 
@@ -89,7 +89,7 @@ void behaviorSmooth(int vx, int vy) {
 }
 
 
-// Erratic driving behavior
+// Jerky motion style
 void behaviorErratic(int vx, int vy) {
   // the higher, the more often it's switching the back/forth
   float phasesOverTime = 3; 
@@ -103,7 +103,7 @@ void behaviorErratic(int vx, int vy) {
   setMotors(magnitudeMotion, 0, vx);
 }
 
-// Normal driving behavior
+// Linear motion style
 void behaviorNormal(int vx, int vy) {
   setMotors(vx, 0, vy);
 }
@@ -141,7 +141,7 @@ void setMotors(float magnitude, float dir, float angularMotion) {
     m2.setSpeed(w2_speed);
     m3.setSpeed(w3_speed);
 
-    // TODO: for more erratic behavior, we could use the mX.setBrake(BRAKE_ON); at times, to get harder stops
+   
 }
 
 
